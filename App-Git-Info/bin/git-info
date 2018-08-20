@@ -1,0 +1,40 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use App::Git::Info;
+
+App::Git::Info->run;
+
+# PODNAME: git-info
+=head1 NAME
+
+git-info - displays a summary of information about the git repository.
+
+=head1 SYNOPSIS
+
+    shlomif@telaviv1:~/conf/trunk$ git info info
+    ⇒ On branch master
+     M shlomif-settings/home-bin-executables/bin/git-i
+    ⇒ Remotes:
+    origin  git@github.com:shlomif/shlomif-computer-settings.git (fetch)
+    origin  git@github.com:shlomif/shlomif-computer-settings.git (push)
+    shlomif@telaviv1:~/conf/trunk$
+
+=head1 TIP
+
+I added a "git i" alias for "git info info".
+
+=head1 SEE ALSO
+
+L<https://metacpan.org/pod/distribution/App-GitUtils/script/gu> has an "info"
+subcommand, but no sample info is given there and I was unable to install
+it from CPAN due to failing tests in one of the dependencies.
+
+Here is a nice 1990s Reggae hit song with a related name:
+L<https://en.wikipedia.org/wiki/Informer_(song)> , and a youtube search for
+it: L<https://www.youtube.com/results?search_query=informer+snow> .
+
+=cut
+
