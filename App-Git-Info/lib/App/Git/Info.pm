@@ -14,10 +14,13 @@ App::Rad->run;
 
 sub info
 {
-    return (  `git status` =~ s#\A(On branch \S+).*#⇒ $1#mrs . "\n"
+    my $ret =
+        (     `git status` =~ s#\A(On branch \S+).*#⇒ $1#mrs . "\n"
             . `git status -s`
             . "⇒ Remotes:\n"
             . `git remote -v` );
+    chomp $ret;
+    return $ret;
 }
 
 1;
