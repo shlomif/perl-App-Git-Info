@@ -4,9 +4,11 @@ use strict;
 use warnings;
 use 5.016;
 
+package main;
+
 use App::Rad;
 
-# App::Rad->run;
+App::Rad->run;
 
 sub info
 {
