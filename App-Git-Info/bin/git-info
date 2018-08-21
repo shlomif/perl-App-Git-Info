@@ -1,14 +1,15 @@
 #!/usr/bin/env perl
 
+# ABSTRACT: Displays a summary of information about the git repository.
+
 use strict;
 use warnings;
 
 use App::Git::Info;
 
 # PODNAME: git-info
-=head1 NAME
 
-git-info - displays a summary of information about the git repository.
+=head1 NAME
 
 =head1 SYNOPSIS
 
@@ -35,4 +36,3 @@ L<https://en.wikipedia.org/wiki/Informer_(song)> , and a youtube search for
 it: L<https://www.youtube.com/results?search_query=informer+snow> .
 
 =cut
-

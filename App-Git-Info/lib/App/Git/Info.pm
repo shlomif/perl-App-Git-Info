@@ -1,5 +1,7 @@
 package App::Git::Info;
 
+# ABSTRACT: Displays a summary of information about the git repository.
+
 use strict;
 use warnings;
 use 5.016;
@@ -23,8 +25,6 @@ sub info
 __END__
 
 =head1 NAME
-
-git-info - displays a summary of information about the git repository.
 
 =head1 SYNOPSIS
 
