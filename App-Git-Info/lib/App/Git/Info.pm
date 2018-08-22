@@ -10,7 +10,10 @@ package main;
 
 use App::Rad;
 
-App::Rad->run;
+sub run
+{
+    return App::Rad->run;
+}
 
 sub info
 {
