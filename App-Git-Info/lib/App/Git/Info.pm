@@ -5,28 +5,9 @@ package App::Git::Info;
 use strict;
 use warnings;
 use 5.016;
+use autodie;
 
-package main;
-
-use App::Rad;
-
-sub run
-{
-    return App::Rad->run;
-}
-
-sub info
-{
-    my $ret =
-        (     `git status` =~ s#\A(On branch \S+).*#⇒ $1#mrs . "\n"
-            . `git status -s`
-            . "⇒ Remotes:\n"
-            . `git remote -v` );
-    chomp $ret;
-    return $ret;
-}
-
-1;
+use App::Cmd::Setup -app;
 
 __END__
 
