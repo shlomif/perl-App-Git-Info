@@ -35,7 +35,8 @@ sub execute
     }
 
     my $ret =
-        (     $ST =~ s#\A(On branch \S+).*#⇒ $1#mrs . "\n"
+        ( $ST =~
+s#\A(On branch \S+\n)((?:\S[^\n]*\n)?).*#"⇒ $1".($2 ? "⇒ $2" : "")#emrs
             . `git status -s`
             . "⇒ Remotes:\n"
             . `git remote -v` );
