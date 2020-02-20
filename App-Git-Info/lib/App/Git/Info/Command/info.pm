@@ -7,7 +7,10 @@ use warnings;
 use autodie;
 use 5.016;
 
-sub abstract { "verify the presence of dependencies" }
+sub abstract
+{
+    return "Displays a summary of information about the git repository.";
+}
 
 sub description { return abstract(); }
 

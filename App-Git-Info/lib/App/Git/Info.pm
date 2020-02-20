@@ -1,7 +1,5 @@
 package App::Git::Info;
 
-# ABSTRACT: Displays a summary of information about the git repository.
-
 use strict;
 use warnings;
 use 5.016;
@@ -13,20 +11,22 @@ __END__
 
 =head1 NAME
 
+App::Git::Info - Displays a summary of information about the git repository.
+
 =head1 SYNOPSIS
 
-    shlomif@telaviv1:~/conf/trunk$ git info info
+    shlomif[perl-begin]:$trunk$ git info info
     ⇒ On branch master
-     M shlomif-settings/home-bin-executables/bin/git-i
+    ⇒ Your branch is up to date with 'origin/master'.
+    ?? y.txt
     ⇒ Remotes:
-    origin  git@github.com:shlomif/shlomif-computer-settings.git (fetch)
-    origin  git@github.com:shlomif/shlomif-computer-settings.git (push)
-    shlomif@telaviv1:~/conf/trunk$
+    origin  git@github.com:shlomif/perl-begin.git (fetch)
+    origin  git@github.com:shlomif/perl-begin.git (push)
+    shlomif[perl-begin]:$trunk$
 
-=head1 METHODS
+=head1 DESCRIPTION
 
-=head2 info
-
-Implement the info subcommand.
+Displays a git dashboard-of-sorts with info from C<git status>,
+C<git status -s>, and C<git remote -v> .
 
 =cut
