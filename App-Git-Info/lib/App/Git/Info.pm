@@ -32,7 +32,9 @@ sub _init
 {
     my ( $self, $args ) = @_;
 
-    $self->_argv( $args->{argv} or die "specify argv" );
+    my $argv = $args->{argv} or die "specify argv";
+
+    $self->_argv( [ @{$argv} ] );
 
     return;
 }
@@ -55,6 +57,8 @@ sub _validate_args
 
     # no args allowed but options!
     $self->usage_error("No args allowed") if @$args;
+
+    return;
 }
 
 sub _execute
@@ -82,13 +86,26 @@ s#\A(On branch \S+\n)((?:\S[^\n]*\n)?).*#"⇒ $1".($2 ? "⇒ $2" : "")#emrs
 sub run
 {
     my $self = shift;
-    my $argv = $self->_argv();
+    my $argv = [ @{ $self->_argv() } ];
+
+    if ( not @$argv )
+    {
+        die
+qq#Must include a verb/action command - e.g "git-info info" or "git-info help"#;
+    }
 
     my $cmd = shift @$argv;
 
     if ( $cmd eq "info" )
     {
         return $self->_execute( undef(), $argv, );
+    }
+    elsif ( $cmd eq "help" )
+    {
+        print <<'ENDOFHELP';
+git-info info - Displays a summary of information about the git repository.
+
+ENDOFHELP
     }
     else
     {
